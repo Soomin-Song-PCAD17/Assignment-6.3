@@ -10,16 +10,17 @@
 CallerQueue queue = new CallerQueue();
 queue.Enqueue("Alpha");
 queue.Enqueue("Bravo");
+foreach(CallerNode node in queue) { Console.WriteLine(node.ToString()); }
+
 queue.Enqueue("Charlie");
 queue.Enqueue("Delta");
 queue.Enqueue("Echo");
 queue.Dequeue();
-queue.Enqueue("Foxtrot");
+foreach(CallerNode node in queue) { Console.WriteLine(node.ToString()); }
 
-foreach(CallerNode node in queue)
-{
-    Console.WriteLine(node.ToString());
-}
+queue.Enqueue("Foxtrot");
+queue.Dequeue();
+foreach(CallerNode node in queue) { Console.WriteLine(node.ToString()); }
 
 
 class CallerQueue: IEnumerable<CallerNode>
